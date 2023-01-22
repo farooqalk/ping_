@@ -1,7 +1,7 @@
 # ping_
-usage:<br>
-    ping_
-<br>
+usage:
+    <pre>ping_</pre>
+
 Scan Types:
 
     0: Lightning Scan || Scan Time (Seconds Per 255 Addresses) = 2.55 Seconds 
@@ -11,8 +11,10 @@ Scan Types:
 
 Note: The lower the scan option, the lower accuracy in the results.
 
-Scan Type: 0
-<br>
+
+
+Scan Type: <b>0</b>
+
 Default Gateway: xxx.xxx.x.x
 <br>
 |0| IP> xxx.xxx.x.4 || MAC> XX:XX:XX:XX:XX:XX || Vendor> Vendor1
