@@ -1,5 +1,6 @@
 # ping_
 usage:
+<br>
     0: Lightning Scan || Scan Time (Seconds Per 255 Addresses) = 2.55 Seconds
     <br>
     1: Quick Scan     || Scan Time (Seconds Per 255 Addresses) = 38.25 Seconds
