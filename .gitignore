@@ -1,3 +1,6 @@
 Old/
 exe/
 /log.txt
+ping_.py
+__pycache__/os_detect.cpython-311.pyc
+__pycache__/ping_.cpython-311.pyc

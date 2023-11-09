@@ -13,6 +13,7 @@ import colorama
 from colorama import Fore
 from colorama import Style
 import threading
+from os_detect import detect_os
 
 class ping_:
     def __init__(self) -> None:
@@ -112,10 +113,11 @@ class ping_:
             'clear': "| Clears terminal window",
             'save ': "| Saves results to log.txt",
             'help ': "| Prints this help menu",
+            'os'   : "| Try to detect the os of a device with a given IP address",
             'exit ': "| Quits program",
         }
 
-        commands = ['exit', 'print', 'ip', 'help', 'clear', 'save', 'ping']
+        commands = ['exit', 'print', 'ip', 'help', 'clear', 'save', 'ping', "os"]
 
         # TODO: Add error handling
         while True:
@@ -185,7 +187,14 @@ class ping_:
 
                 except:
                     print(Fore.RED + 'Invalid Usage. Enter "help" to see usage.' + Style.RESET_ALL)
-
+            
+            elif(commands[7] in userInput):
+                try:
+                    ipIndex = input("Device# (0-255)")
+                    detect_os(self.IPsFound[int(ipIndex)])
+                except Exception as e:
+                    print(Fore.RED + f"Something went wrong {e}" + Style.RESET_ALL)
+                    pass
         # Invalid Commands
             elif(userInput not in commands):
                 print(
