@@ -45,9 +45,12 @@ class ping_:
         """Outputs results of script
         """
         for l in range(len(self.IPsFound)):
-            print(
-                f'''|{l}| IP> {self.IPsFound[l]} || MAC> {self.macsFound[l]} || Vendor> {self.vendorsFound[l]}'''
-            )
+            try:
+                print(
+                    f'''|{l}| IP> {self.IPsFound[l]} || MAC> {self.macsFound[l]} || Vendor> {self.vendorsFound[l]}'''
+                )
+            except:
+                pass
 
 
     
@@ -88,6 +91,7 @@ class ping_:
         # Get macs for each IP found
         for h in range(len(self.IPsFound)):
             # Get MAC address and save it to variable
+            macAddr="N/A"
             macAddr = get_mac_address(ip=(self.IPsFound[h]))
             # Append IP to array
             self.macsFound.append(macAddr)
@@ -96,13 +100,17 @@ class ping_:
     def generateVendors(self):
         """Loops through each IP, uses MAC address to find the device vendor
         """
+        vendor = "N/A"
         # Get vendor for each MAC found
         for p in range(len(self.IPsFound)):
             # Get vendor using the MAC addresses in the macsFound array
-            vendor = self.getVendor(self.macsFound[p])
+            try:
+                vendor = self.getVendor(self.macsFound[p])
+            except:
+                vendor = "N/A"
             # Vendor to vendorsFound array
             self.vendorsFound.append(vendor)
-            p += 1
+            # p += 1
             
     def prompt(self):
         userInput = ""
